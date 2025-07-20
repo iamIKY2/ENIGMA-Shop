@@ -185,12 +185,4 @@ Có thể mở rộng thêm các tính năng:
 - Giao diện Material Design
 - Responsive layout
 
-## 📞 Liên hệ
 
-- **Issues**: Tạo issue trên GitHub
-- **Discussions**: Sử dụng GitHub Discussions
-- **Email**: [your-email@example.com]
-
-## 📄 License
-
-Project này được phân phối dưới giấy phép MIT. Xem file [LICENSE](LICENSE) để biết thêm chi tiết. 
