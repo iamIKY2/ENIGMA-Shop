@@ -3,6 +3,18 @@
 ## Mô tả
 Ứng dụng Android mô phỏng cửa hàng điện tử với khả năng quản lý sản phẩm sử dụng SQLite database.
 
+## 📋 Mục lục
+- [Mô tả](#mô-tả)
+- [Tính năng chính](#tính-năng-chính)
+- [Cài đặt](#cài-đặt)
+- [Cấu trúc Database](#cấu-trúc-database)
+- [Cách sử dụng](#cách-sử-dụng)
+- [Cấu trúc code](#cấu-trúc-code)
+- [Đóng góp](#đóng-góp)
+- [Dữ liệu mẫu](#dữ-liệu-mẫu)
+- [Mở rộng tính năng](#mở-rộng-tính-năng)
+- [Lưu ý kỹ thuật](#lưu-ý-kỹ-thuật)
+
 ## Tính năng chính
 
 ### 1. Hiển thị sản phẩm
@@ -33,6 +45,37 @@
 - `sold`: Số lượng đã bán
 - `image_resource`: ID hình ảnh sản phẩm
 - `category_id`: ID danh mục (Foreign Key)
+
+## Cài đặt
+
+### Yêu cầu hệ thống
+- **Android Studio**: Phiên bản mới nhất (Arctic Fox trở lên)
+- **JDK**: Version 11 hoặc cao hơn
+- **Android SDK**: API Level 28 trở lên
+- **RAM**: Tối thiểu 4GB (khuyến nghị 8GB)
+
+### Các bước cài đặt
+1. **Clone repository**
+   ```bash
+   git clone <repository-url>
+   cd tieuluan2
+   ```
+
+2. **Mở project trong Android Studio**
+   - Mở Android Studio
+   - Chọn "Open an existing Android Studio project"
+   - Chọn thư mục `tieuluan2`
+
+3. **Sync project**
+   - Đợi Android Studio sync Gradle files
+   - Nếu có thông báo update Gradle, chọn "Update"
+
+4. **Build và chạy**
+   - Build project: `Build > Make Project`
+   - Chạy ứng dụng: Nhấn nút "Run" (▶️)
+
+### Troubleshooting
+Nếu gặp lỗi, xem file [SETUP.md](SETUP.md) để biết hướng dẫn chi tiết.
 
 ## Cách sử dụng
 
@@ -102,6 +145,27 @@
 - Samsung S24 Ultra
 - Samsung Galaxy Tab A9+
 
+## Đóng góp
+
+Chúng tôi rất hoan nghênh mọi đóng góp! Nếu bạn muốn đóng góp vào project này:
+
+1. **Fork** repository này
+2. Tạo **branch** mới cho tính năng của bạn (`git checkout -b feature/AmazingFeature`)
+3. **Commit** thay đổi của bạn (`git commit -m 'Add some AmazingFeature'`)
+4. **Push** lên branch (`git push origin feature/AmazingFeature`)
+5. Mở **Pull Request**
+
+Xem file [CONTRIBUTING.md](CONTRIBUTING.md) để biết hướng dẫn chi tiết về quy trình đóng góp.
+
+### Tính năng có thể đóng góp
+- [ ] Giỏ hàng và đơn hàng
+- [ ] Quản lý người dùng (đăng ký/đăng nhập)
+- [ ] Đánh giá và bình luận sản phẩm
+- [ ] Yêu thích sản phẩm
+- [ ] Tìm kiếm nâng cao
+- [ ] Dark mode
+- [ ] Animation chuyển cảnh
+
 ## Mở rộng tính năng
 
 Có thể mở rộng thêm các tính năng:
@@ -119,4 +183,14 @@ Có thể mở rộng thêm các tính năng:
 - Dữ liệu được lưu trữ bền vững
 - Có thể thêm/sửa/xóa sản phẩm
 - Giao diện Material Design
-- Responsive layout 
+- Responsive layout
+
+## 📞 Liên hệ
+
+- **Issues**: Tạo issue trên GitHub
+- **Discussions**: Sử dụng GitHub Discussions
+- **Email**: [your-email@example.com]
+
+## 📄 License
+
+Project này được phân phối dưới giấy phép MIT. Xem file [LICENSE](LICENSE) để biết thêm chi tiết. 
