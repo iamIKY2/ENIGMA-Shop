@@ -83,7 +83,7 @@
                     android:background="@drawable/search_background"
                     android:drawableStart="@android:drawable/ic_menu_search"
                     android:drawablePadding="8dp"
-                    android:hint="Tìm kiếm điện thoại, tablet..."
+                    android:hint="Bạn muốn mua gì hôm nay?"
                     android:padding="12dp"
                     android:textAlignment="viewStart"
                     android:textColor="#E01818"

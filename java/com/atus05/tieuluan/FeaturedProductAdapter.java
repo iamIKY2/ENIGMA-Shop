@@ -46,8 +46,14 @@ public class FeaturedProductAdapter extends RecyclerView.Adapter<FeaturedProduct
 
         // Xử lý click cho item sản phẩm
         holder.itemView.setOnClickListener(v -> {
-            // TODO: Xử lý khi click vào sản phẩm nổi bật
-            // Toast.makeText(v.getContext(), "Đã chọn " + product.getName(), Toast.LENGTH_SHORT).show();
+            android.content.Context context = v.getContext();
+            android.content.Intent intent = new android.content.Intent(context, ProductDetailActivity.class);
+            intent.putExtra("name", product.getName());
+            intent.putExtra("highlight", product.getHighlight()); // Đảm bảo Product có getHighlight()
+            intent.putExtra("specs", product.getSpecs()); // Đảm bảo Product có getSpecs()
+            intent.putExtra("reviews", product.getRating() + " ⭐");
+            intent.putExtra("price", product.getPrice());
+            context.startActivity(intent);
         });
     }
 

@@ -76,14 +76,7 @@ import android.widget.Toast;
             FeaturedProductAdapter featuredAdapter = new FeaturedProductAdapter(featuredProductList);
             rvFeaturedProducts.setAdapter(featuredAdapter);
 
-            // Thiết lập sự kiện cho nút quản lý sản phẩm
-            btnManageProducts.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(MainActivity.this, ProductManagementActivity.class);
-                    startActivity(intent);
-                }
-            });
+
 
             ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
                 Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
