@@ -26,6 +26,8 @@
             android:name=".ProductManagementActivity"
             android:exported="false"
             android:label="Quản lý sản phẩm" />
+
+        <activity android:name=".ProductDetailActivity" />
     </application>
 
 </manifest>

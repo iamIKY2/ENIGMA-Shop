@@ -40,7 +40,14 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
         holder.image.setImageResource(product.getImageResId());
 
         holder.itemView.setOnClickListener(v -> {
-            // Xử lý khi click vào sản phẩm
+            android.content.Context context = v.getContext();
+            android.content.Intent intent = new android.content.Intent(context, ProductDetailActivity.class);
+            intent.putExtra("name", product.getName());
+            intent.putExtra("highlight", product.getHighlight()); // Đảm bảo Product có getHighlight()
+            intent.putExtra("specs", product.getSpecs()); // Đảm bảo Product có getSpecs()
+            intent.putExtra("reviews", product.getRating() + " ⭐");
+            intent.putExtra("price", product.getPrice());
+            context.startActivity(intent);
         });
     }
 
