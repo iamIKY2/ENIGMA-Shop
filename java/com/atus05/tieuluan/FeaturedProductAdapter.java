@@ -33,8 +33,16 @@ public class FeaturedProductAdapter extends RecyclerView.Adapter<FeaturedProduct
 
         holder.name.setText(product.getName());
         holder.price.setText(product.getPrice());
+
         holder.rating.setText(product.getRating() + " ⭐");
         holder.image.setImageResource(product.getImageResId());
+
+        // Thêm xử lý cho giá cũ (gạch ngang)
+        TextView oldPrice = holder.itemView.findViewById(R.id.tv_product_old_price);
+        if (oldPrice != null) {
+            oldPrice.setText(product.getOldPrice()); // Đảm bảo Product có getOldPrice()
+            oldPrice.setPaintFlags(oldPrice.getPaintFlags() | android.graphics.Paint.STRIKE_THRU_TEXT_FLAG);
+        }
 
         // Xử lý click cho item sản phẩm
         holder.itemView.setOnClickListener(v -> {
@@ -51,7 +59,7 @@ public class FeaturedProductAdapter extends RecyclerView.Adapter<FeaturedProduct
     static class FeaturedProductViewHolder extends RecyclerView.ViewHolder {
 
         ImageView image;
-        TextView name, price, rating;
+        TextView name, price, rating, oldPrice;
 
         public FeaturedProductViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -59,6 +67,8 @@ public class FeaturedProductAdapter extends RecyclerView.Adapter<FeaturedProduct
             name = itemView.findViewById(R.id.tv_product_name);
             price = itemView.findViewById(R.id.tv_product_price);
             rating = itemView.findViewById(R.id.tv_rating);
+            // Thêm tham chiếu đến TextView giá cũ
+            oldPrice = itemView.findViewById(R.id.tv_product_old_price);
         }
     }
 } 
