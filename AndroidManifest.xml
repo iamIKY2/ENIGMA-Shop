@@ -26,6 +26,10 @@
             android:name=".ProductManagementActivity"
             android:exported="false"
             android:label="Quản lý sản phẩm" />
+
+        <activity android:name=".ProductDetailActivity" />
+        <activity android:name=".LaptopActivity" />
+        <activity android:name=".MacbookActivity" />
     </application>
 
 </manifest>

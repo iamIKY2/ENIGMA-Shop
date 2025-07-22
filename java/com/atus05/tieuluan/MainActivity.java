@@ -38,8 +38,7 @@ import android.widget.Toast;
             rvProducts = findViewById(R.id.rv_products);
             rvFeaturedProducts = findViewById(R.id.rv_featured_products);
             rvCategories = findViewById(R.id.rv_categories);
-            btnManageProducts = findViewById(R.id.btn_manage_products);
-            
+
             // Thiết lập GridLayoutManager cho RecyclerView chính (2 cột)
             rvProducts.setLayoutManager(new GridLayoutManager(this, 2));
             
@@ -76,14 +75,7 @@ import android.widget.Toast;
             FeaturedProductAdapter featuredAdapter = new FeaturedProductAdapter(featuredProductList);
             rvFeaturedProducts.setAdapter(featuredAdapter);
 
-            // Thiết lập sự kiện cho nút quản lý sản phẩm
-            btnManageProducts.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent(MainActivity.this, ProductManagementActivity.class);
-                    startActivity(intent);
-                }
-            });
+
 
             ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
                 Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
@@ -95,10 +87,15 @@ import android.widget.Toast;
         @Override
         public void onCategoryClick(Category category) {
             // Xử lý sự kiện click vào danh mục
-            
-            // TODO: Có thể lọc sản phẩm theo danh mục được chọn
-            // List<Product> filteredProducts = databaseHelper.getProductsByCategory(categoryId);
-            // adapter.updateProducts(filteredProducts);
+            if (category.getName().equalsIgnoreCase("Laptop")) {
+                // Nếu là danh mục Laptop thì chuyển sang trang Laptop
+                Intent intent = new Intent(this, LaptopActivity.class);
+                startActivity(intent);
+            } else {
+                // TODO: Có thể lọc sản phẩm theo danh mục được chọn
+                // List<Product> filteredProducts = databaseHelper.getProductsByCategory(categoryId);
+                // adapter.updateProducts(filteredProducts);
+            }
         }
         
         @Override

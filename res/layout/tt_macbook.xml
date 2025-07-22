@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:paddingTop="32dp"
+        android:gravity="center_horizontal"> <!-- Thêm gravity để căn giữa -->
+
+        <!-- Danh sách loại Macbook: Air, Pro, Mini, iMac -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Các loại Macbook"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginTop="32dp"
+            android:layout_marginBottom="8dp"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginBottom="16dp">
+
+            <TextView
+                android:id="@+id/tvMacbookAir"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_need_border"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:textColor="#222"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:text="Macbook Air"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/tvMacbookPro"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_need_border"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:textColor="#222"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:text="Macbook Pro"
+                android:layout_marginEnd="8dp"/>
+
+            <TextView
+                android:id="@+id/tvMacbookMini"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_need_border"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp"
+                android:textColor="#222"
+                android:textSize="16sp"
+                android:gravity="center"
+                android:text="Mac Mini"
+                android:layout_marginEnd="8dp"/>
+
+        </LinearLayout>
+
+        <!-- Danh sách  Macbook (ẩn hoặc chỉ hiển thị Macbook) -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewBrands"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Danh sách nhu cầu Macbook -->
+
+        <!-- Danh sách sản phẩm Macbook nổi bật -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Macbook nổi bật"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:layout_marginBottom="8dp"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewFeatured"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"/>
+
+        <!-- Danh sách tất cả sản phẩm Macbook -->
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:text="Tất cả sản phẩm Macbook"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerViewAllProducts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView> 
