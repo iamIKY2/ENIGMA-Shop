@@ -97,6 +97,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         insertProduct(db, "Xiaomi 14 Ultra", "18.990.000đ", "21.990.000đ", 4.6f, 140, R.drawable.xiaomi14ultra, "Snapdragon 8 Gen 3, Camera Leica", "Màn hình: 6.73\" AMOLED, RAM: 12GB, ROM: 512GB, Camera: 50MP+50MP+50MP+50MP, Pin: 5000mAh", 1);
         insertProduct(db, "Samsung S24 Ultra", "25.990.000đ", "28.990.000đ", 4.7f, 190, R.drawable.samsung_s24, "Snapdragon 8 Gen 3, S Pen", "Màn hình: 6.8\" AMOLED, RAM: 12GB, ROM: 256GB, Camera: 200MP+12MP+10MP, Pin: 5000mAh", 1);
         insertProduct(db, "Samsung Galaxy Tab A9+ WIFI 4GB 64GB", "4.070.000đ", "5.890.000đ", 4.5f, 231, R.drawable.samsung_galaxy_tab_a9_plus_1, "Màn hình lớn, Pin 7040mAh", "Màn hình: 11\" TFT LCD, RAM: 4GB, ROM: 64GB, Camera: 8MP, Pin: 7040mAh", 2);
+        // --- Sản phẩm Macbook (ghi chú: chỉ dành cho Macbook) ---
+        insertProduct(db, "Macbook Pro M4", "45.990.000₫", "49.990.000₫", 4.9f, 120, R.drawable.macbook_pro_m4, "Macbook, Chip Apple M4, 8GB RAM, SSD 512GB", "Màn hình: 14\" Liquid Retina, RAM: 8GB, SSD: 512GB, Loại card đồ họa: Apple M4 GPU, Dung lượng RAM: 8GB, Ổ cứng: 512GB SSD, Kích thước màn hình: 14 inches, Công nghệ màn hình: Liquid Retina, Pin: 52,6 Wh, Hệ điều hành: MacOS, Độ phân giải màn hình: 3024 x 1964 pixels, Loại CPU: Apple M4, Cổng giao tiếp: 2 x Thunderbolt 4, Jack tai nghe 3.5 mm, MagSafe 3", 3);
+        insertProduct(db, "Macbook Air M2", "28.990.000₫", "32.990.000₫", 4.8f, 90, R.drawable.macbook_pro_m4, "Macbook, Chip Apple M2, 8GB RAM, SSD 256GB", "Màn hình: 13.6\" Liquid Retina, RAM: 8GB, SSD: 256GB, Loại card đồ họa: Apple M2 GPU, Dung lượng RAM: 8GB, Ổ cứng: 256GB SSD, Kích thước màn hình: 13.6 inches, Công nghệ màn hình: Liquid Retina, Pin: 53,7 Wh, Hệ điều hành: MacOS, Độ phân giải màn hình: 2560 x 1600 pixels, Loại CPU: Apple M2, Cổng giao tiếp: 2 x Thunderbolt 3, Jack tai nghe 3.5 mm, MagSafe 3", 3);
+        insertProduct(db, "Macbook Pro M3", "39.990.000₫", "43.990.000₫", 4.7f, 80, R.drawable.macbook_pro_m4, "Macbook, Chip Apple M3, 16GB RAM, SSD 512GB", "Màn hình: 14\" Liquid Retina, RAM: 16GB, SSD: 512GB, Loại card đồ họa: Apple M3 GPU, Dung lượng RAM: 16GB, Ổ cứng: 512GB SSD, Kích thước màn hình: 14 inches, Công nghệ màn hình: Liquid Retina, Pin: 54,3 Wh, Hệ điều hành: MacOS, Độ phân giải màn hình: 3024 x 1964 pixels, Loại CPU: Apple M3, Cổng giao tiếp: 2 x Thunderbolt 4, Jack tai nghe 3.5 mm, MagSafe 3", 3);
+        insertProduct(db, "Macbook Air M1", "22.990.000₫", "26.990.000₫", 4.6f, 110, R.drawable.macbook_pro_m4, "Macbook, Chip Apple M1, 8GB RAM, SSD 256GB", "Màn hình: 13.3\" Retina, RAM: 8GB, SSD: 256GB, Loại card đồ họa: Apple M1 GPU, Dung lượng RAM: 8GB, Ổ cứng: 256GB SSD, Kích thước màn hình: 13.3 inches, Công nghệ màn hình: Retina, Pin: 54 Wh, Hệ điều hành: MacOS, Độ phân giải màn hình: 2560 x 1600 pixels, Loại CPU: Apple M1, Cổng giao tiếp: 2 x Thunderbolt 3, Jack tai nghe 3.5 mm, MagSafe 3", 3);
+        insertProduct(db, "Macbook Pro 2022", "35.990.000₫", "39.990.000₫", 4.5f, 70, R.drawable.macbook_pro_m4, "Macbook, Chip Apple M2 Pro, 16GB RAM, SSD 512GB", "Màn hình: 16\" Liquid Retina, RAM: 16GB, SSD: 512GB, Loại card đồ họa: Apple M2 Pro GPU, Dung lượng RAM: 16GB, Ổ cứng: 512GB SSD, Kích thước màn hình: 16 inches, Công nghệ màn hình: Liquid Retina, Pin: 90 Wh, Hệ điều hành: MacOS, Độ phân giải màn hình: 3840 x 2400 pixels, Loại CPU: Apple M2 Pro, Cổng giao tiếp: 2 x Thunderbolt 4, Jack tai nghe 3.5 mm, MagSafe 3", 3);
+        insertProduct(db, "Asus ROG Strix", "32.000.000đ", "35.000.000đ", 4.7f, 80, R.drawable.asus_rog_strix, "Intel i7, RTX 4060, 16GB RAM", "Màn hình: 15.6\" FHD 144Hz, RAM: 16GB, SSD: 512GB", 3);
+        insertProduct(db, "Laptop ASUS Gaming Vivobook 16X", "17.490.000đ", "20.990.000đ", 4.6f, 60, R.drawable.asus_vv_16x, "I5-13420H, 16GB RAM, mỏng nhẹ", "Màn hình: 16 inches FHD, RAM: 16GB, SSD: 512GB", 3);
+        insertProduct(db, "Laptop HP Gaming Victus 15", "16.190.000đ", "24.590.000đ", 5f, 120, R.drawable.hp_gaming_15, "I5-12450H, 16GB RAM, 512GB SSD", "Màn hình: 13.4\" FHD Touch, RAM: 16GB, SSD: 512GB", 3);
+        insertProduct(db, "Laptop MSI Modern 14", "11.436.300đ", "15.990.000đ", 5f, 120, R.drawable.msi_modern14, "I5-1235U/16GB/512GB PCIE/14.0 FHD/WIN11/ĐEN", "Màn hình: 14.0\" FHD, RAM: 16GB, SSD: 512GB", 3);
     }
 
     // Thêm danh mục vào database
@@ -194,8 +204,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 int imageResource = cursor.getInt(cursor.getColumnIndexOrThrow(COLUMN_PRODUCT_IMAGE));
                 String highlight = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PRODUCT_HIGHLIGHT));
                 String detail = cursor.getString(cursor.getColumnIndexOrThrow(COLUMN_PRODUCT_SPECS));
-                Product product = new Product(name, price, oldPrice, rating, sold, imageResource, highlight, detail,
-                    Arrays.asList(new SpecItem("Thông số kỹ thuật", detail)));
+                // Tách detail thành nhiều SpecItem
+                List<SpecItem> specs = new ArrayList<>();
+                String[] specPairs = detail.split(", ");
+                for (String pair : specPairs) {
+                    String[] keyValue = pair.split(": ");
+                    if (keyValue.length == 2) {
+                        specs.add(new SpecItem(keyValue[0], keyValue[1]));
+                    }
+                }
+                Product product = new Product(name, price, oldPrice, rating, sold, imageResource, highlight, detail, specs);
                 products.add(product);
             } while (cursor.moveToNext());
         }
