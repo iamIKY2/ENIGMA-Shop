@@ -10,6 +10,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import java.util.ArrayList;
 import java.util.List;
 
 // Adapter cho danh sách sản phẩm laptop (dạng dọc)
@@ -33,15 +35,28 @@ public class ProductLaptopAdapter extends RecyclerView.Adapter<ProductLaptopAdap
     @Override
     public void onBindViewHolder(@NonNull ProductViewHolder holder, int position) {
         Product product = productList.get(position);
-        holder.name.setText(product.getName());
-        holder.price.setText(product.getPrice());
-        holder.oldPrice.setText(product.getOldPrice());
+        // Gán dữ liệu từ Product vào View
+        holder.name.setText(product.getName()); // Tên sản phẩm
+        holder.price.setText(product.getPrice()); // Giá hiện tại
+        holder.oldPrice.setText(product.getOldPrice()); // Giá cũ
+        holder.rating.setText(product.getRating() + " ⭐"); // Đánh giá
+        holder.image.setImageResource(product.getImageResId()); // Hình ảnh
+        // Gạch ngang giá cũ
         holder.oldPrice.setPaintFlags(holder.oldPrice.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
-        holder.rating.setText(product.getRating() + " ⭐");
-        holder.image.setImageResource(product.getImageResId());
-
+        // Sự kiện click giữ nguyên
         holder.itemView.setOnClickListener(v -> {
             Intent intent = new Intent(context, ProductDetailActivity.class);
+            if (product.getSpecifications() == null || product.getSpecifications().isEmpty()) {
+                List<SpecItem> specs = new ArrayList<>();
+                String[] specPairs = product.getDetail().split(", ");
+                for (String pair : specPairs) {
+                    String[] keyValue = pair.split(": ");
+                    if (keyValue.length == 2) {
+                        specs.add(new SpecItem(keyValue[0], keyValue[1]));
+                    }
+                }
+                product.setSpecifications(specs);
+            }
             intent.putExtra("product", product);
             context.startActivity(intent);
         });

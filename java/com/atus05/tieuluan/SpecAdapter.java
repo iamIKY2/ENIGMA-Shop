@@ -18,7 +18,8 @@ public class SpecAdapter extends RecyclerView.Adapter<SpecAdapter.SpecViewHolder
     @NonNull
     @Override
     public SpecViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_spec, parent, false);
+        View view = LayoutInflater.from(parent.getContext())
+                .inflate(R.layout.item_spec, parent, false);
         return new SpecViewHolder(view);
     }
 
@@ -27,6 +28,9 @@ public class SpecAdapter extends RecyclerView.Adapter<SpecAdapter.SpecViewHolder
         SpecItem item = specList.get(position);
         holder.tvName.setText(item.name);
         holder.tvValue.setText(item.value);
+
+        // Thiết lập mô tả trợ năng
+        holder.itemView.setContentDescription(item.name + ": " + item.value);
     }
 
     @Override
@@ -34,12 +38,18 @@ public class SpecAdapter extends RecyclerView.Adapter<SpecAdapter.SpecViewHolder
         return specList.size();
     }
 
-    public static class SpecViewHolder extends RecyclerView.ViewHolder {
+    static class SpecViewHolder extends RecyclerView.ViewHolder {
         TextView tvName, tvValue;
+
         public SpecViewHolder(@NonNull View itemView) {
             super(itemView);
             tvName = itemView.findViewById(R.id.tv_spec_name);
             tvValue = itemView.findViewById(R.id.tv_spec_value);
+
+            // Cấu hình accessibility
+            itemView.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_YES);
+            tvName.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_NO);
+            tvValue.setImportantForAccessibility(View.IMPORTANT_FOR_ACCESSIBILITY_NO);
         }
     }
-} 
+}
