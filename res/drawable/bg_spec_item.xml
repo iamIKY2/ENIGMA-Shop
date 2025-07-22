@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Nền bo góc, màu trắng, bóng đổ nhẹ cho item thông số -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Màu nền trắng -->
+    <solid android:color="#FFFFFF" />
+    <!-- Bo góc 12dp -->
+    <corners android:radius="12dp" />
+    <!-- Đổ bóng nhẹ (chỉ hiệu quả trên API 21+) -->
+    <padding android:left="2dp" android:top="2dp" android:right="2dp" android:bottom="2dp" />
+</shape>
