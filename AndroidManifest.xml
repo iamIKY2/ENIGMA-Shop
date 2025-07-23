@@ -15,22 +15,29 @@
         <activity
             android:name=".MainActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+            <!-- Không có intent-filter ở đây để không phải là launcher -->
         </activity>
+        
 
-        <activity
-            android:name=".ProductManagementActivity"
-            android:exported="false"
-            android:label="Quản lý sản phẩm" />
 
         <activity android:name=".ProductDetailActivity" />
         <activity android:name=".LaptopActivity" />
-        <activity android:name=".MacbookActivity" />
-        <activity android:name=".SmatPhone" />
+        <activity android:name=".man_hinh" />
+        <activity android:name=".PhoneActivity" />
+        <activity android:name=".TabletActivity" />
+        <activity android:name=".WatchActivity" />
+        <activity android:name=".TVActivity" />
+        <activity android:name=".AudioActivity" />
+        <activity android:name=".AccessoryActivity" />
+        <activity android:name=".WelcomeActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".LoginActivity" />
+        <activity android:name=".RegisterActivity" />
     </application>
 
 </manifest>

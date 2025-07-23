@@ -8,7 +8,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:background="#FFFFFF"
         android:padding="16dp">
 
         <!-- Danh sách hãng laptop -->
@@ -23,7 +22,6 @@
             android:id="@+id/recyclerViewBrands"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FFFFFF"
             android:layout_marginBottom="16dp"/>
 
         <!-- Danh sách nhu cầu laptop -->
@@ -34,15 +32,13 @@
             android:textStyle="bold"
             android:textSize="18sp"
             android:layout_marginBottom="8dp"/>
-
-        <!-- Danh sách sản phẩm nổi bật -->
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerViewNeeds"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
-            android:background="#FFFFFF" />
+            android:layout_marginBottom="16dp"/>
 
+        <!-- Danh sách sản phẩm nổi bật -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -54,7 +50,6 @@
             android:id="@+id/recyclerViewFeatured"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="#FFFFFF"
             android:layout_marginBottom="16dp"/>
 
         <!-- Danh sách tất cả sản phẩm laptop -->
@@ -71,4 +66,4 @@
             android:layout_height="wrap_content"/>
 
     </LinearLayout>
-</androidx.core.widget.NestedScrollView>
+</androidx.core.widget.NestedScrollView> 
