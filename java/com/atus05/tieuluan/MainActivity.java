@@ -64,7 +64,7 @@ import android.widget.Toast;
                 // Sử dụng java.util.Collections để trộn ngẫu nhiên danh sách
                 java.util.Collections.shuffle(productList);
                 // Lấy tối đa 3 sản phẩm đầu tiên sau khi đã random
-                int featuredCount = Math.min(3, productList.size());
+                int featuredCount = Math.min(5, productList.size());
                 for (int i = 0; i < featuredCount; i++) {
                     featuredProductList.add(productList.get(i));
                 }
