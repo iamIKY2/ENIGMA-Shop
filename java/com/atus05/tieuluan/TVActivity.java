@@ -65,7 +65,7 @@ public class TVActivity extends AppCompatActivity {
         List<Product> featuredProducts = new ArrayList<>();
         if (filteredProducts.size() > 0) {
             java.util.Collections.shuffle(filteredProducts);
-            int featuredCount = Math.min(3, filteredProducts.size());
+            int featuredCount = Math.min(4, filteredProducts.size());
             for (int i = 0; i < featuredCount; i++) {
                 featuredProducts.add(filteredProducts.get(i));
             }

@@ -54,7 +54,7 @@
             android:background="#E0E0E0"
             android:contentDescription="Hình ảnh sản phẩm"
             android:scaleType="centerCrop"
-            android:src="@drawable/iphone_16_pr" />
+            android:src="@drawable/icon_laptop" />
 
         <!-- Product Info -->
         <LinearLayout
@@ -71,7 +71,7 @@
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:text="iPhone 16 Pro Max 256GB"
+                android:text="Macbook Pro 14"
                 android:textColor="#333333"
                 android:textSize="14sp"
                 android:textStyle="bold" />
