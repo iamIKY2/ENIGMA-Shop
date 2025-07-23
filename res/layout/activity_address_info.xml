@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="24dp">
+
+    <!-- Spinner chọn Tỉnh/Thành phố -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tỉnh/Thành phố" />
+    <Spinner
+        android:id="@+id/spinnerCity"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:minHeight="48dp" />
+
+    <!-- Spinner chọn Quận/Huyện -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quận/Huyện"
+        android:layout_marginTop="16dp" />
+    <Spinner
+        android:id="@+id/spinnerDistrict"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:minHeight="48dp" />
+
+    <!-- EditText ghi chú khác (nếu có) -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ghi chú khác (nếu có)"
+        android:layout_marginTop="16dp" />
+    <EditText
+        android:id="@+id/editNote"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:hint="Nhập ghi chú..."
+        android:inputType="text"
+        android:autofillHints="username" />
+
+    <!-- Nút Tiếp tục -->
+    <Button
+        android:id="@+id/btnNext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Tiếp tục"
+        android:layout_marginTop="24dp" />
+
+</LinearLayout> 
