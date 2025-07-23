@@ -21,11 +21,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        
+
         <activity
             android:name=".ProductManagementActivity"
             android:exported="false"
             android:label="Quản lý sản phẩm" />
+
+        <activity android:name=".ProductDetailActivity" />
+        <activity android:name=".LaptopActivity" />
+        <activity android:name=".MacbookActivity" />
+        <activity android:name=".SmatPhone" />
     </application>
 
 </manifest>
