@@ -24,23 +24,9 @@
             android:text="ENIGMA Shop"
             android:textColor="#FFFFFF"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:gravity="center" />
 
-        <ImageView
-            android:id="@+id/iv_cart"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/giohang"
-            android:layout_marginEnd="16dp"
-            android:contentDescription="Giỏ hàng" />
-
-        <ImageView
-            android:id="@+id/iv_search"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:src="@drawable/timkiem"
-            android:layout_marginEnd="16dp"
-            android:contentDescription="Tìm kiếm" />
 
     </LinearLayout>
 
@@ -91,6 +77,17 @@
                     android:textColor="#FFFFFF" />
             </LinearLayout>
 
+            <!-- Suggestion keywords -->
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_suggestions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#F5F5F5"
+                android:paddingHorizontal="16dp"
+                android:visibility="gone"
+                android:layout_marginBottom="4dp"
+                android:contentDescription="Gợi ý từ khóa tìm kiếm" />
+
             <!-- Categories Title -->
             <TextView
                 android:layout_width="match_parent"
@@ -134,16 +131,16 @@
                 android:contentDescription="Sản phẩm nổi bật scroll ngang" />
 
             <!-- Title cho sản phẩm chính -->
-
-            <!-- RecyclerView chính -->
             <TextView
+                android:id="@+id/tv_suggested_products_title"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="16dp"
-                android:text="Tất cả sản phẩm"
+                android:text="Sản phẩm gợi ý"
                 android:textColor="#333333"
                 android:textSize="18sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:visibility="gone" />
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_products"
@@ -152,6 +149,30 @@
                 android:paddingHorizontal="16dp"
                 android:clipToPadding="false"
                 android:contentDescription="Danh sách sản phẩm nổi bật" />
+
+            <LinearLayout
+                android:id="@+id/nav_category"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="8dp">
+
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:contentDescription="Danh mục"
+                    android:src="@drawable/danhmuc" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Danh mục"
+                    android:textColor="#666666"
+                    android:textSize="12sp" />
+            </LinearLayout>
 
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
@@ -191,29 +212,6 @@
         </LinearLayout>
 
         <!-- Category -->
-        <LinearLayout
-            android:id="@+id/nav_category"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:padding="8dp">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/danhmuc"
-                android:contentDescription="Danh mục" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Danh mục"
-                android:textSize="12sp"
-                android:textColor="#666666"
-                android:layout_marginTop="4dp" />
-        </LinearLayout>
 
         <!-- Cart -->
         <LinearLayout
@@ -235,6 +233,31 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Giỏ hàng"
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:layout_marginTop="4dp" />
+        </LinearLayout>
+
+        <!-- Order History -->
+        <LinearLayout
+            android:id="@+id/nav_order_history"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:padding="8dp">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/giohang"
+                android:contentDescription="Đơn hàng" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Đơn hàng"
                 android:textSize="12sp"
                 android:textColor="#666666"
                 android:layout_marginTop="4dp" />

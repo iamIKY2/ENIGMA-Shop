@@ -15,6 +15,9 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import android.widget.ArrayAdapter;
+import androidx.appcompat.app.AlertDialog;
+import android.content.SharedPreferences;
 
 public class ProductDetailActivity extends AppCompatActivity {
     private static final String TAG = "ProductDetailActivity";
@@ -33,6 +36,30 @@ public class ProductDetailActivity extends AppCompatActivity {
 
         // Ánh xạ và thiết lập view
         setupViews(product);
+
+        Button btnAddToCart = findViewById(R.id.btnAddToCart);
+        Button btnBuyNow = findViewById(R.id.btnBuyNow);
+        btnAddToCart.setOnClickListener(v -> {
+            if (!isLoggedIn()) {
+                startActivity(new Intent(this, WelcomeActivity.class));
+                return;
+            }
+            CartManager.addToCart(this, product);
+            Toast.makeText(this, "Đã thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
+        });
+        btnBuyNow.setOnClickListener(v -> {
+            if (!isLoggedIn()) {
+                startActivity(new Intent(this, WelcomeActivity.class));
+                return;
+            }
+            if (product == null) {
+                Toast.makeText(this, "Không có thông tin sản phẩm!", Toast.LENGTH_SHORT).show();
+                return;
+            }
+            Intent intent = new Intent(this, OrderInfoActivity.class);
+            intent.putExtra("product", product);
+            startActivity(intent);
+        });
     }
 
     private Product getProductFromIntent() {
@@ -83,6 +110,23 @@ public class ProductDetailActivity extends AppCompatActivity {
         rvSpecs.setLayoutManager(new LinearLayoutManager(this));
         SpecAdapter specAdapter = new SpecAdapter(specs);
         rvSpecs.setAdapter(specAdapter);
+    }
+
+    private boolean isLoggedIn() {
+        SharedPreferences prefs = getSharedPreferences("user_profile", MODE_PRIVATE);
+        String username = prefs.getString("username", null);
+        return username != null && !username.isEmpty();
+    }
+
+    private void showLoginRequiredDialog() {
+        new AlertDialog.Builder(this)
+            .setTitle("Yêu cầu đăng nhập")
+            .setMessage("Bạn cần đăng nhập để sử dụng chức năng này. Đăng nhập/Đăng ký ngay?")
+            .setPositiveButton("Đăng nhập/Đăng ký", (dialog, which) -> {
+                startActivity(new Intent(this, WelcomeActivity.class));
+            })
+            .setNegativeButton("Hủy", null)
+            .show();
     }
 
     private void showError(String message) {

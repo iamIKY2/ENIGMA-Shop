@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Button;
+import android.widget.ImageButton;
+import android.util.Log;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -17,7 +20,7 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
     private List<Product> productList;
 
     public ProductAdapter(List<Product> productList) {
-        this.productList = productList;
+        this.productList = (productList != null) ? productList : new java.util.ArrayList<>();
     }
 
     @NonNull
@@ -41,17 +44,41 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
         holder.itemView.setOnClickListener(v -> {
             android.content.Context context = v.getContext();
+            android.content.SharedPreferences prefs = context.getSharedPreferences("user_profile", android.content.Context.MODE_PRIVATE);
+            String username = prefs.getString("username", null);
+            if (username == null || username.isEmpty()) {
+                context.startActivity(new android.content.Intent(context, WelcomeActivity.class));
+                return;
+            }
             android.content.Intent intent = new android.content.Intent(context, ProductDetailActivity.class);
             intent.putExtra("product", product);
             context.startActivity(intent);
+        });
+
+        // Xử lý nút Thêm vào giỏ
+        ImageButton btnAddToCart = holder.itemView.findViewById(R.id.btn_add_to_cart);
+        btnAddToCart.setOnClickListener(v -> {
+            android.content.Context context = v.getContext();
+            android.content.SharedPreferences prefs = context.getSharedPreferences("user_profile", android.content.Context.MODE_PRIVATE);
+            String username = prefs.getString("username", null);
+            if (username == null || username.isEmpty()) {
+                context.startActivity(new android.content.Intent(context, WelcomeActivity.class));
+                return;
+            }
+            CartManager.addToCart(context, product);
+            Log.d("CartManager", "Đã thêm: " + product.getName());
+            android.widget.Toast.makeText(context, "Đã thêm vào giỏ hàng", android.widget.Toast.LENGTH_SHORT).show();
         });
     }
 
     @Override
     public int getItemCount() {
-        return productList.size();
+        return (productList != null) ? productList.size() : 0;
     }
-
+    public void updateProducts(List<Product> newProducts) {
+        this.productList = (newProducts != null) ? newProducts : new java.util.ArrayList<>();
+        notifyDataSetChanged();
+    }
     static class ProductViewHolder extends RecyclerView.ViewHolder {
 
         ImageView image;

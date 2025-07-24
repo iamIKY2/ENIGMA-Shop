@@ -16,7 +16,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Chào mừng đến với Shop Điện Tử"
+        android:text="Chào mừng đến với ENIGMA SHOP"
         android:textSize="20sp"
         android:textStyle="bold"
         android:textColor="#222"
@@ -40,5 +40,16 @@
         android:backgroundTint="#43A047"
         android:textColor="#fff"
         android:textAllCaps="false" />
+
+    <Button
+        android:id="@+id/btnSkip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bỏ qua"
+        android:layout_gravity="end"
+        android:background="@android:color/transparent"
+        android:textColor="#1976D2"
+        android:textStyle="bold"
+        android:layout_margin="12dp" />
 
 </LinearLayout> 

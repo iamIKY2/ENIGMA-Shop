@@ -10,8 +10,8 @@ import java.util.List;
 
 // Activity hiển thị trang màn hình với hãng, nhu cầu và sản phẩm nổi bật
 public class man_hinh extends AppCompatActivity {
-    private RecyclerView recyclerViewBrands, recyclerViewNeeds, recyclerViewFeatured, recyclerViewAllProducts;
-    private SimpleStringAdapter brandAdapter, needAdapter;
+    private RecyclerView recyclerViewBrands, recyclerViewFeatured, recyclerViewAllProducts;
+    private SimpleStringAdapter brandAdapter;
     private FeaturedProductLaptopAdapter featuredAdapter;
     private ProductLaptopAdapter allProductAdapter;
 
@@ -22,13 +22,11 @@ public class man_hinh extends AppCompatActivity {
 
         // Ánh xạ các RecyclerView
         recyclerViewBrands = findViewById(R.id.recyclerViewBrands);
-        recyclerViewNeeds = findViewById(R.id.recyclerViewNeeds);
         recyclerViewFeatured = findViewById(R.id.recyclerViewFeatured);
         recyclerViewAllProducts = findViewById(R.id.recyclerViewAllProducts);
 
         // Thiết lập layout cho từng RecyclerView
         recyclerViewBrands.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        recyclerViewNeeds.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         recyclerViewFeatured.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         recyclerViewAllProducts.setLayoutManager(new GridLayoutManager(this, 2)); // 2 cột, chia trái phải
 
@@ -39,17 +37,8 @@ public class man_hinh extends AppCompatActivity {
         brands.add("LG");
         brands.add("E-Dra");
         brands.add("ViewSonic");
-        brandAdapter = new SimpleStringAdapter(brands, true); // true: dùng layout có viền cho hãng
+        brandAdapter = new SimpleStringAdapter(brands);
         recyclerViewBrands.setAdapter(brandAdapter);
-
-        // Dữ liệu nhu cầu màn hình (bạn có thể chỉnh sửa lại cho phù hợp)
-        List<String> needs = new ArrayList<>();
-        needs.add("Văn phòng");
-        needs.add("Gaming");
-        needs.add("Đồ họa");
-        needs.add("Giải trí");
-        needAdapter = new SimpleStringAdapter(needs);
-        recyclerViewNeeds.setAdapter(needAdapter);
 
         // Lấy sản phẩm màn hình từ database (categoryId = 5)
         DatabaseHelper dbHelper = new DatabaseHelper(this);

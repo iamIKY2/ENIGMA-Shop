@@ -134,24 +134,10 @@
                 android:padding="8dp"/>
         </LinearLayout>
         <!-- Spinner chọn màu sắc -->
-        <Spinner
-            android:id="@+id/spinner_color"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:minHeight="48dp"
-            android:prompt="@string/prompt_color" />
 
-        <!-- Spinner chọn dung lượng -->
-        <Spinner
-            android:id="@+id/spinner_storage"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:minHeight="48dp"
-            android:prompt="@string/prompt_storage" />
+        <!-- Đã xóa Spinner dung lượng -->
 
-        <!-- Giá, nút mua ngay, trả góp -->
+        <!-- Giá, nút mua ngay, trả góp, thêm vào giỏ -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -166,7 +152,7 @@
                 android:layout_weight="1"
                 android:text="29.990.000₫"
                 android:textColor="#E91E63"
-                android:textSize="20sp"
+                android:textSize="18sp"
                 android:textStyle="bold" />
 
             <Button
@@ -179,10 +165,9 @@
                 android:text="Mua ngay"
                 android:textColor="#FFFFFF" />
 
-            <!-- Nút thêm vào giỏ hàng -->
             <Button
-                android:id="@+id/btn_add_to_cart"
-                android:layout_width="wrap_content"
+                android:id="@+id/btnAddToCart"
+                android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="8dp"
                 android:background="#4CAF50"

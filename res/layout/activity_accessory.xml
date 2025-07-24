@@ -11,32 +11,6 @@
         android:padding="16dp">
 
         <!-- Danh sách hãng phụ kiện -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Hãng phụ kiện"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:layout_marginBottom="8dp"/>
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewBrands"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"/>
-
-        <!-- Danh sách nhu cầu phụ kiện -->
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Nhu cầu phụ kiện"
-            android:textStyle="bold"
-            android:textSize="18sp"
-            android:layout_marginBottom="8dp"/>
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recyclerViewNeeds"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"/>
 
         <!-- Danh sách sản phẩm nổi bật -->
         <TextView

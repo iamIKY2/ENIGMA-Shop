@@ -14,6 +14,7 @@ public class WelcomeActivity extends AppCompatActivity {
 
         Button btnLogin = findViewById(R.id.btnLogin);
         Button btnRegister = findViewById(R.id.btnRegister);
+        Button btnSkip = findViewById(R.id.btnSkip);
 
         btnLogin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -26,6 +27,15 @@ public class WelcomeActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(WelcomeActivity.this, RegisterActivity.class));
+            }
+        });
+
+        btnSkip.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getSharedPreferences("user_profile", MODE_PRIVATE).edit().clear().apply();
+                startActivity(new Intent(WelcomeActivity.this, MainActivity.class));
+                finish();
             }
         });
     }
