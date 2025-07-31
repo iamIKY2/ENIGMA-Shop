@@ -9,8 +9,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class WatchActivity extends AppCompatActivity {
-    private RecyclerView recyclerViewBrands, recyclerViewNeeds, recyclerViewFeatured, recyclerViewAllProducts;
-    private SimpleStringAdapter brandAdapter, needAdapter;
+    private RecyclerView recyclerViewBrands, recyclerViewFeatured, recyclerViewAllProducts;
+    private SimpleStringAdapter brandAdapter;
     private FeaturedProductAdapter featuredAdapter;
     private ProductAdapter allProductAdapter;
 
@@ -21,13 +21,11 @@ public class WatchActivity extends AppCompatActivity {
 
         // Ánh xạ các RecyclerView
         recyclerViewBrands = findViewById(R.id.recyclerViewBrands);
-        recyclerViewNeeds = findViewById(R.id.recyclerViewNeeds);
         recyclerViewFeatured = findViewById(R.id.recyclerViewFeatured);
         recyclerViewAllProducts = findViewById(R.id.recyclerViewAllProducts);
 
         // Thiết lập layout cho từng RecyclerView
         recyclerViewBrands.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        recyclerViewNeeds.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         recyclerViewFeatured.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         recyclerViewAllProducts.setLayoutManager(new GridLayoutManager(this, 2));
 
@@ -38,17 +36,8 @@ public class WatchActivity extends AppCompatActivity {
         brands.add("Samsung");
         brands.add("Xiaomi");
         brands.add("Garmin");
-        brandAdapter = new SimpleStringAdapter(brands, true);
+        brandAdapter = new SimpleStringAdapter(brands);
         recyclerViewBrands.setAdapter(brandAdapter);
-
-        // Dữ liệu nhu cầu đồng hồ
-        List<String> needs = new ArrayList<>();
-        needs.add("Thể thao");
-        needs.add("Thời trang");
-        needs.add("Theo dõi sức khỏe");
-        needs.add("Thông minh");
-        needAdapter = new SimpleStringAdapter(needs);
-        recyclerViewNeeds.setAdapter(needAdapter);
 
         // Lấy sản phẩm đồng hồ từ database (categoryId = 4)
         DatabaseHelper dbHelper = new DatabaseHelper(this);

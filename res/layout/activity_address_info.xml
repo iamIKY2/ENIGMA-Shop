@@ -13,8 +13,7 @@
     <Spinner
         android:id="@+id/spinnerCity"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:minHeight="48dp" />
+        android:layout_height="wrap_content" />
 
     <!-- Spinner chọn Quận/Huyện -->
     <TextView
@@ -25,8 +24,7 @@
     <Spinner
         android:id="@+id/spinnerDistrict"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:minHeight="48dp" />
+        android:layout_height="wrap_content" />
 
     <!-- EditText ghi chú khác (nếu có) -->
     <TextView
@@ -37,10 +35,8 @@
     <EditText
         android:id="@+id/editNote"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:hint="Nhập ghi chú..."
-        android:inputType="text"
-        android:autofillHints="username" />
+        android:layout_height="wrap_content"
+        android:hint="Nhập ghi chú..." />
 
     <!-- Nút Tiếp tục -->
     <Button

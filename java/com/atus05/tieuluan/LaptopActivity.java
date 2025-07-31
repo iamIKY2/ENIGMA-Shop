@@ -10,8 +10,8 @@ import java.util.List;
 
 // Activity hiển thị trang laptop với hãng, nhu cầu và sản phẩm nổi bật
 public class LaptopActivity extends AppCompatActivity {
-    private RecyclerView recyclerViewBrands, recyclerViewNeeds, recyclerViewFeatured, recyclerViewAllProducts;
-    private SimpleStringAdapter brandAdapter, needAdapter;
+    private RecyclerView recyclerViewBrands, recyclerViewFeatured, recyclerViewAllProducts;
+    private SimpleStringAdapter brandAdapter;
     private FeaturedProductLaptopAdapter featuredAdapter;
     private ProductLaptopAdapter allProductAdapter;
 
@@ -22,13 +22,11 @@ public class LaptopActivity extends AppCompatActivity {
 
         // Ánh xạ các RecyclerView
         recyclerViewBrands = findViewById(R.id.recyclerViewBrands);
-        recyclerViewNeeds = findViewById(R.id.recyclerViewNeeds);
         recyclerViewFeatured = findViewById(R.id.recyclerViewFeatured);
         recyclerViewAllProducts = findViewById(R.id.recyclerViewAllProducts);
 
         // Thiết lập layout cho từng RecyclerView
         recyclerViewBrands.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
-        recyclerViewNeeds.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         recyclerViewFeatured.setLayoutManager(new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false));
         recyclerViewAllProducts.setLayoutManager(new GridLayoutManager(this, 2)); // 2 cột, chia trái phải
 
@@ -42,17 +40,8 @@ public class LaptopActivity extends AppCompatActivity {
         brands.add("HP");
         brands.add("MSI");
         brands.add("Acer");
-        brandAdapter = new SimpleStringAdapter(brands, true); // true: dùng layout có viền cho hãng
+        brandAdapter = new SimpleStringAdapter(brands);
         recyclerViewBrands.setAdapter(brandAdapter);
-
-        // Dữ liệu nhu cầu laptop (bạn có thể chỉnh sửa lại cho phù hợp)
-        List<String> needs = new ArrayList<>();
-        needs.add("Văn phòng");
-        needs.add("Gaming");
-        needs.add("Mỏng nhẹ");
-        needs.add("Cảm ứng");
-        needAdapter = new SimpleStringAdapter(needs);
-        recyclerViewNeeds.setAdapter(needAdapter);
 
         // Lấy sản phẩm laptop từ database (categoryId = 3)
         DatabaseHelper dbHelper = new DatabaseHelper(this);

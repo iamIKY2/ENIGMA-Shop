@@ -13,13 +13,18 @@
         android:theme="@style/Theme.Tieuluan"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name=".WelcomeActivity"
             android:exported="true">
-            <!-- Không có intent-filter ở đây để không phải là launcher -->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
-        
-
-
+        <activity android:name=".MainActivity" android:exported="true" />
+        <activity android:name=".CartActivity" />
+        <activity android:name=".OrderHistoryActivity" />
+        <activity android:name=".OrderInfoActivity" />
+        <activity android:name=".ProfileActivity" />
         <activity android:name=".ProductDetailActivity" />
         <activity android:name=".LaptopActivity" />
         <activity android:name=".man_hinh" />
@@ -29,13 +34,6 @@
         <activity android:name=".TVActivity" />
         <activity android:name=".AudioActivity" />
         <activity android:name=".AccessoryActivity" />
-        <activity android:name=".WelcomeActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
         <activity android:name=".LoginActivity" />
         <activity android:name=".RegisterActivity" />
     </application>

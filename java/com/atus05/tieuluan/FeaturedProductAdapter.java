@@ -5,6 +5,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ImageButton;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -50,6 +52,19 @@ public class FeaturedProductAdapter extends RecyclerView.Adapter<FeaturedProduct
             android.content.Intent intent = new android.content.Intent(context, ProductDetailActivity.class);
             intent.putExtra("product", product);
             context.startActivity(intent);
+        });
+
+        ImageButton btnAddToCart = holder.itemView.findViewById(R.id.btn_add_to_cart);
+        btnAddToCart.setOnClickListener(v -> {
+            android.content.Context context = holder.itemView.getContext();
+            android.content.SharedPreferences prefs = context.getSharedPreferences("user_profile", android.content.Context.MODE_PRIVATE);
+            String username = prefs.getString("username", null);
+            if (username == null || username.isEmpty()) {
+                context.startActivity(new android.content.Intent(context, WelcomeActivity.class));
+                return;
+            }
+            CartManager.addToCart(context, product);
+            android.widget.Toast.makeText(context, "Đã thêm vào giỏ hàng", android.widget.Toast.LENGTH_SHORT).show();
         });
     }
 

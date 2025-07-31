@@ -8,6 +8,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.ImageButton;
+import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -59,6 +61,11 @@ public class ProductLaptopAdapter extends RecyclerView.Adapter<ProductLaptopAdap
             }
             intent.putExtra("product", product);
             context.startActivity(intent);
+        });
+        ImageButton btnAddToCart = holder.itemView.findViewById(R.id.btn_add_to_cart);
+        btnAddToCart.setOnClickListener(v -> {
+            CartManager.addToCart(context, product);
+            Toast.makeText(context, "Đã thêm vào giỏ hàng", Toast.LENGTH_SHORT).show();
         });
     }
 
